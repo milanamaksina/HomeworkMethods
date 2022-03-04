@@ -8,6 +8,24 @@ namespace HW_Methods
 {
     static class Variables
     {
+        public static void GetResultOfDivisionAndRemainder(int a, int b, out int result, out int remainder)
+        {
+            if (b == 0)
+            {
+                throw new Exception("Ошибка");
+            }
+            result = a / b;
+            remainder = a % b;
+        }
+
+       public static void Swap(ref string a, ref string b)
+        {
+            string tmp;
+            tmp = a;
+            a = b;
+            b = tmp;
+        }
+
         public static int GetResultOftheExpression(int a, int b)
         {
             int result = (5 * a + b * b) / (b - a);

@@ -1,10 +1,10 @@
 ﻿using HW_Methods;
-double a = Convert.ToInt32(Console.ReadLine());
-double b = Convert.ToInt32(Console.ReadLine());
-double c = Convert.ToInt32(Console.ReadLine());
-double d = Convert.ToInt32(Console.ReadLine());
+string a = Console.ReadLine();
+string b = Console.ReadLine();
+string tmp;
 
+Variables.Swap(ref a, ref b);
 
-string result = Variables.GetStraightLineEquation(a, b, c, d);
-Console.WriteLine(result);
+Console.WriteLine(a);
+Console.WriteLine(b);
 
