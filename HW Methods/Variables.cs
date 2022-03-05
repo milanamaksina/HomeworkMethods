@@ -18,7 +18,7 @@ namespace HW_Methods
             remainder = a % b;
         }
 
-       public static void Swap(ref string a, ref string b)
+        public static void Swap(ref string a, ref string b)
         {
             string tmp;
             tmp = a;
