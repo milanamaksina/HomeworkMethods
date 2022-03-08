@@ -12,31 +12,39 @@ namespace HW_Methods
         {
             if (b == 0)
             {
-                throw new Exception("Ошибка");
+                throw new Exception("Error");
             }
             result = a / b;
             remainder = a % b;
-        }
+        } //1
 
         public static void Swap(ref string a, ref string b)
         {
+            if (a == b)
+            {
+                throw new Exception("Error");
+            }
             string tmp;
             tmp = a;
             a = b;
             b = tmp;
-        }
+        } //3
 
         public static int GetResultOftheExpression(int a, int b)
         {
             int result = (5 * a + b * b) / (b - a);
             return result;
-        }
+        } //2
 
-        public static int FindXLinearEquation(int a, int b, int c)
+        public static double FindXLinearEquation(double a, double b, double c)
         {
-            int x = (c - b) / a;
+            if (a == 0)
+            {
+                throw new Exception("Error");
+            }
+            double x = (c - b) / a;
             return x;
-        }
+        } //4
         public static string GetStraightLineEquation(double x1, double y1, double x2, double y2)
         {
             double pointA = (y1 - y2) / (x1 - x2);

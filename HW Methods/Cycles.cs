@@ -13,15 +13,16 @@
             return result;
         }
 
-        public static string GetNumbersThatAreDivisibleBy(int a)
+        static public int[] GetArray(int n)
         {
-            string result = "";
-            for (int i = a; i < 1000; i += a)
+            int[] temp = new int[1000];
+            for (int i = 0; i < temp.Length; i += n)
             {
-                result += i + "\n"; ;
+                temp[i] = i;
             }
-            return result;
-        } //2
+
+            return temp;
+        }
 
         public static int FindTheNumbersLessThanSquare(int a) // 3
         {
@@ -79,6 +80,10 @@
 
         public static int PrintTheFibonacciNumber(int n)
         {
+            if (n < 0)
+            {
+                throw new Exception("Error");
+            }
             int numb1 = 1;
             int numb2 = 1;
             int amount = 0;
@@ -96,6 +101,8 @@
         public static int FindTheGreatestCommonDivisor(int a, int b)
         {
             int nod;
+            a = Math.Abs(a);
+            b = Math.Abs(b);
             if (b == 0)
             {
                 throw new Exception("Ошибка");
@@ -202,6 +209,8 @@
             int tmp1;
             int secondNumber;
             int tmp2;
+            numb1 = Math.Abs(numb1);
+            numb2 = Math.Abs(numb2);
             bool isEqualNumber = false;
             string yes = "ДА";
             string no = "НЕТ";
@@ -228,8 +237,8 @@
             else
             {
                 return no;
-            } 
+            }
 
         } //12
-    } 
+    }
 }

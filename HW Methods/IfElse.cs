@@ -99,6 +99,10 @@ namespace HW_Methods
 
         public static string Reshi(ref double a, ref double b, ref double c)
         {
+            if (a == 0 && b == 0)
+            {
+                throw new Exception("Error");
+            }
             string result;
             double discriminant = (b * b) - 4 * a * c;
             double rootD = Math.Sqrt(discriminant);
@@ -121,6 +125,10 @@ namespace HW_Methods
 
         public static string  GetDoubleFiguresInLetters (int a)
         {
+            if (a < 10 && a > 99)
+            {
+                throw new Exception("Error");
+            }
             int decade = a / 10;
             int unit = a % 10;
             string name = "";
