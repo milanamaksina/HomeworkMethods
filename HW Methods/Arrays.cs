@@ -17,7 +17,7 @@
             int[] a = new int[lenght];
             for (int i = 0; i < a.Length; i++)
             {
-                a[i] = r.Next(100);
+                a[i] = r.Next(10);
             }
             return a;
         }
@@ -100,9 +100,13 @@
             int[] array = Arrays.GenerateArray(10);
             WriteArray(array);
             int sum = 0;
-            for (int i = 0; i < array.Length; i += 2)
-            {
-                sum += array[i];
+            for (int i = 0; i < array.Length; i++)
+            {      
+                if (i % 2 == 1)
+                {
+                    sum += array[i];
+                }
+                     
             }
             return sum;
 

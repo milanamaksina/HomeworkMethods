@@ -1,5 +1,5 @@
 ﻿using HW_Methods;
 
 int s;
-s = Arrays.GetAmountOfOddElements();
-Console.WriteLine($"Ответ: {s}");
+s = Arrays.CalculateTheSumOfOddElements();
+Console.WriteLine(s);
