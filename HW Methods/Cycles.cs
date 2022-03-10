@@ -13,16 +13,21 @@
             return result;
         }
 
-        static public int[] GetArray(int n)
+        static public int[] GetDivisibleNumbers(int n)
         {
-            int[] temp = new int[1000];
-            for (int i = 0; i < temp.Length; i += n)
+            int[] temp = new int[1000/n];
+            int b = 0;
+            for (int i = 1; i < 1000; i++)
             {
-                temp[i] = i;
-            }
+                if (i % n == 0)
+                {
+                    temp[b] = i;
+                    b++;    
+                }
 
+            }
             return temp;
-        }
+        } //2
 
         public static int FindTheNumbersLessThanSquare(int a) // 3
         {
@@ -171,10 +176,11 @@
 
         } //10
 
-        public static string FindNumbersWithGreaterEvenSum(int n)
+        public static int[] FindNumbersWithGreaterEvenSum(int n)
         {
             int integer, remainder, even, odd;
-            string result = "";
+            int[] result = new int[n];
+            int tmp = 0;
             for (int i = 1; i <= n; i++)
             {
                 integer = i;
@@ -195,7 +201,8 @@
                 }
                 if (even > odd)
                 {
-                    result += i + "\n";
+                    result[tmp] = i;
+                    tmp++;
 
                 }
 

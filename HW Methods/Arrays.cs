@@ -2,30 +2,33 @@
 {
     internal class Arrays
     {
-        public static void WriteArray(int[] a)
+        public static void WriteArray(int[] array)
         {
-            for (int i = 0; i < a.Length; i++)
+            for (int i = 0; i < array.Length; i++)
             {
-                Console.Write(a[i] + " ");
+                Console.Write(array[i] + " ");
             }
 
         }
-        public static int[] GenerateArray(int lenght)
+        public static int[] GenerateArray(int lenght, int min = -100, int max = 100)
         {
             Random r = new Random();
 
-            int[] a = new int[lenght];
-            for (int i = 0; i < a.Length; i++)
+            int[] array = new int[lenght];
+            for (int i = 0; i < array.Length; i++)
             {
-                a[i] = r.Next(10);
+                array[i] = r.Next(min, max);
             }
-            return a;
+            return array;
         }
-
-        public static int FindMinValue()
+        public static int[] CopyArray(int[] array)
         {
-            int[] array = Arrays.GenerateArray(100);
-            WriteArray(array);
+            int[] newArray = new int[array.Length];
+            Array.Copy(array, newArray, array.Length);
+            return newArray;
+        }
+        public static int FindMinValue(int[] array)
+        {
             int minValue = array[0];
 
             for (int i = 1; i < array.Length; i++)
@@ -37,10 +40,8 @@
             }
             return minValue;
         }
-        public static int FindMaxValue()
+        public static int FindMaxValue(int[] array)
         {
-            int[] array = Arrays.GenerateArray(100);
-            WriteArray(array);
             int maxValue = array[0];
 
             for (int i = 1; i < array.Length; i++)
@@ -52,10 +53,8 @@
             }
             return maxValue;
         }
-        public static int FindIndexOfMinValue()
+        public static int FindIndexOfMinValue(int[] array)
         {
-            int[] array = Arrays.GenerateArray(10);
-            WriteArray(array);
             int minValue = array[0];
             for (int i = 1; i < array.Length; i++)
             {
@@ -73,10 +72,8 @@
             }
             return -1;
         }
-        public static int FindIndexOfMaxValue()
+        public static int FindIndexOfMaxValue(int[] array)
         {
-            int[] array = Arrays.GenerateArray(100);
-            WriteArray(array);
             int maxValue = array[0];
 
             for (int i = 1; i < array.Length; i++)
@@ -95,38 +92,33 @@
             }
             return -1;
         }
-        public static int CalculateTheSumOfOddElements()
+        public static int CalculateTheSumWithOddIndexies(int[] array)
         {
-            int[] array = Arrays.GenerateArray(10);
-            WriteArray(array);
             int sum = 0;
             for (int i = 0; i < array.Length; i++)
-            {      
+            {
                 if (i % 2 == 1)
                 {
                     sum += array[i];
                 }
-                     
+
             }
             return sum;
 
         }
-
-        public static void ReverseArray()
+        public static int[] ReverseArray(int[] array)
         {
-            int[] array = Arrays.GenerateArray(100);
-            WriteArray(array);
-            for (int i = array.Length - 1; i >= 0; i--)
+            int[] result = CopyArray(array);
+            for (int i = 0; i < result.Length / 2; i++)
             {
-                Console.WriteLine(array[i] + " ");
+                int tmp = result[i];
+                result[i] = result[result.Length - (1 + i)];
+                result[result.Length - (1 + i)] = tmp;
             }
-
+            return result;
         }
-
-        public static int GetAmountOfOddElements()
+        public static int GetAmountOfOddElements(int[] array)
         {
-            int[] array = Arrays.GenerateArray(10);
-            WriteArray(array);
             int sum = 0;
             for (int i = 0; i < array.Length; i++)
             {
@@ -137,8 +129,43 @@
             }
             return sum;
         } //7
+        public static int[] SortAscending(int[] array)
+        {
+            int[] result = CopyArray(array);
+            int tmp;
+            for (int i = 0; i < result.Length; i++)
+            {
+                for (int j = 0; j < result.Length - 1 - i; j++)
+                {
+                    if (result[j] > result[j + 1])
+                    {
+                        tmp = result[j];
+                        result[j] = result[j + 1];
+                        result[j + 1] = tmp;
+                    }
 
-
+                }
+            }
+            Console.WriteLine();
+            return result;
+        } //9
+        public static int[] SortDescending(int[] array)
+        {
+            int tmp;
+            for (int i = 0; i < array.Length; i++)
+            {
+                int index = i;
+                tmp = array[i];
+                while (index > 0 && tmp > array[index - 1])
+                {
+                    array[index] = array[index - 1];
+                    index--;
+                }
+                array[index] = tmp;
+            }
+                Console.WriteLine();
+                 return array;
+        } //10
 
     }
 }
