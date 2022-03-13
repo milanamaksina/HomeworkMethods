@@ -12,7 +12,7 @@ namespace HW_Methods
         {
             if (b == 0)
             {
-                throw new Exception("Error");
+                throw new Exception("b can't be 0");
             }
             result = a / b;
             remainder = a % b;
@@ -22,7 +22,7 @@ namespace HW_Methods
         {
             if (a == b)
             {
-                throw new Exception("Error");
+                throw new Exception("a cannot equal b");
             }
             string tmp;
             tmp = a;
@@ -40,7 +40,7 @@ namespace HW_Methods
         {
             if (a == 0)
             {
-                throw new Exception("Error");
+                throw new Exception("a cannot equal b");
             }
             double x = (c - b) / a;
             return x;

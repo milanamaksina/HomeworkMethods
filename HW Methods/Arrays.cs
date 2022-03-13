@@ -2,7 +2,7 @@
 {
     internal class Arrays
     {
-        public static void WriteArray(int[] array)
+        public static void WriteArray(int [] array)
         {
             for (int i = 0; i < array.Length; i++)
             {
@@ -129,6 +129,20 @@
             }
             return sum;
         } //7
+        public static int[] SwapHalf(int[] array)
+        {
+            int[] result = CopyArray(array);
+
+            int n = result.Length / 2;
+            int step = n + result.Length % 2;
+            for (int i = 0; i < n; i++)
+            {
+                int tmp = result[i];
+                result[i] = result[i + step];
+                result[i + step] = tmp;
+            }
+            return result;
+        } //8
         public static int[] SortAscending(int[] array)
         {
             int[] result = CopyArray(array);

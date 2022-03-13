@@ -17,7 +17,7 @@
         {
             int[] temp = new int[1000/n];
             int b = 0;
-            for (int i = 1; i < 1000; i++)
+            for (int i = 1; i <= 1000; i++)
             {
                 if (i % n == 0)
                 {
@@ -179,8 +179,8 @@
         public static int[] FindNumbersWithGreaterEvenSum(int n)
         {
             int integer, remainder, even, odd;
-            int[] result = new int[n];
             int tmp = 0;
+            int[] result = new int[n];
             for (int i = 1; i <= n; i++)
             {
                 integer = i;
@@ -203,12 +203,12 @@
                 {
                     result[tmp] = i;
                     tmp++;
-
                 }
-
+                
             }
+            Array.Resize(ref result, tmp);
             return result;
-
+            
         } //11
 
         public static string CheckNumbersForSameDegits(int numb1, int numb2)

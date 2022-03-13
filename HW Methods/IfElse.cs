@@ -46,6 +46,14 @@ namespace HW_Methods
             {
                 result = "4 координатная четверть";
             }
+            else if (x == 0 && y != 0)
+            {
+                result = "точка лежит на оси ординат";
+            }
+            else if (y == 0 && x != 0)
+            {
+                result = "точка лежит на оси абсцисс"
+            }
             else
             {
                 result = "Точка является началом координаты";
@@ -97,30 +105,34 @@ namespace HW_Methods
             return result;
         }
 
-        public static string Reshi(ref double a, ref double b, ref double c)
+        public static double [] FindXQuadricEquation(double a, double b, double c)
         {
             if (a == 0 && b == 0)
             {
-                throw new Exception("Error");
+                throw new Exception("a and b cannot equal 0");
             }
-            string result;
+            double[] result1 = new double[2];
+            double[] result2 = new double[1];
             double discriminant = (b * b) - 4 * a * c;
             double rootD = Math.Sqrt(discriminant);
-            double x1 = (-b + rootD) / (2 * a);
-            double x2 = (-b - rootD) / (2 * a);
+
             if (discriminant > 0)
             {
-                result = ($"х1 = {x1}  x2= {x2}");
+                result1[0] = (-b + rootD) / (2 * a);
+                result1[1] = (-b - rootD) / (2 * a);
+                return result1;
             }
             else if (discriminant < 0)
             {
-                result = ("Уравнение не имеет корней");
+                result2[0] = 0;
+                return result2;
             }
             else
             {
-                result = ($"X={-b / (2 * b)}");
+                result2[0] = -b / (2 * b);
+                return result2;
             }
-            return result;
+
         }
 
         public static string  GetDoubleFiguresInLetters (int a)

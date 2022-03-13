@@ -32,10 +32,22 @@
             }
             return max;
         }
-        public static int [] FindIndexOfMinValue(int[,] array)
+        public static int[,] CopyArray(int[,] numbers)
+        {
+            int[,] copyArray = new int[numbers.GetLength(0), numbers.GetLength(1)];
+            for (int i = 0; i < numbers.GetLength(0); i++)
+            {
+                for (int j = 0; j < numbers.GetLength(1); j++)
+                {
+                    copyArray[i, j] = numbers[i, j];
+                }
+            }
+            return copyArray;
+        }
+        public static int[] FindIndexOfMinValue(int[,] array)
         {
             int min = array[0, 0];
-            int [] result = new int[2];
+            int[] result = new int[2];
             for (int i = 0; i < array.GetLength(0); i++)
             {
                 for (int j = 0; j < array.GetLength(1); j++)
@@ -111,6 +123,42 @@
                 }
                 Console.WriteLine();
             }
+        }
+        public static int CountElementsHigherThanNeighbor(int[,] array)
+        {
+            int count = 0;
+            for (int i = 0; i < array.GetLength(0); i++)
+            {
+                for (int j = 0; j < array.GetLength(1); j++)
+                {
+                    if (
+                        (i == 0 || array[i, j] > array[i - 1, j])
+                        && (i == array.GetLength(0) - 1 || array[i, j] > array[i + 1, j])
+                        && (j == 0 || array[i, j] > array[i, j - 1])
+                        && (j == array.GetLength(1) - 1 || array[i, j] > array[i, j + 1])
+                        )
+                    {
+                        count++;
+                    }
+                }
+            }
+            return count;
+        }
+        public static int[,] Massiv(int[,] array)
+        {
+            int[,] result = CopyArray(array);
+            int temp;
+            for (int i = 1; i < result.GetLength(0); i++)
+            {
+                for (int j = 0; j < i; j++)
+                {
+                    temp = result[i, j];
+                    result[i, j] = result[j, i];
+                    result[j, i] = temp;
+                }
+            }
+            return result;
+
         }
     }
 

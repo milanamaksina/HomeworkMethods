@@ -1,7 +1,9 @@
 ﻿using HW_Methods;
 
 
-int [] array = Arrays.GenerateArray(10);
-Arrays.WriteArray(array);
-int [] s= Arrays.SortDescending(array);
-Arrays.WriteArray(s);
+
+
+int[,] array = TwoDimensionalArray.Generate2DArray(5, 5);
+TwoDimensionalArray.Write2DArray(array);
+int[,] result = TwoDimensionalArray.Massiv(array);
+TwoDimensionalArray.Write2DArray(result);
