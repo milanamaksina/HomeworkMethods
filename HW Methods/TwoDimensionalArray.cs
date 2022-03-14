@@ -144,7 +144,7 @@
             }
             return count;
         }
-        public static int[,] Massiv(int[,] array)
+        public static int[,] Reflect(int[,] array)
         {
             int[,] result = CopyArray(array);
             int temp;

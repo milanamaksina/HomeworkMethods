@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HW_Methods
 {
-    static class Variables
+    public class Variables
     {
         public static void GetResultOfDivisionAndRemainder(int a, int b, out int result, out int remainder)
         {
@@ -17,7 +17,6 @@ namespace HW_Methods
             result = a / b;
             remainder = a % b;
         } //1
-
         public static void Swap(ref string a, ref string b)
         {
             if (a == b)
@@ -29,18 +28,20 @@ namespace HW_Methods
             a = b;
             b = tmp;
         } //3
-
-        public static int GetResultOftheExpression(int a, int b)
+        public static double GetResultOftheExpression(double a, double b)
         {
-            int result = (5 * a + b * b) / (b - a);
+            if(a == 0 && b == 0)
+            {
+                throw new Exception("a and b cannot equal 0");
+            }
+            double result = (5 * a + b * b) / (b - a);
             return result;
         } //2
-
         public static double FindXLinearEquation(double a, double b, double c)
         {
             if (a == 0)
             {
-                throw new Exception("a cannot equal b");
+                throw new Exception("a cannot equal 0");
             }
             double x = (c - b) / a;
             return x;
@@ -56,6 +57,10 @@ namespace HW_Methods
 
         }
 
+        public static int Add(int a, int b)
+        {
+            return a + b;
+        }
 
 
     }

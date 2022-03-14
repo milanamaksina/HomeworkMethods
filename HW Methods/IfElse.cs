@@ -52,7 +52,7 @@ namespace HW_Methods
             }
             else if (y == 0 && x != 0)
             {
-                result = "точка лежит на оси абсцисс"
+                result = "точка лежит на оси абсцисс";
             }
             else
             {
