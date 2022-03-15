@@ -8,21 +8,17 @@ namespace HW_Methods
 {
     public class Variables
     {
-        public static void GetResultOfDivisionAndRemainder(int a, int b, out int result, out int remainder)
+        public static void GetResultOfDivisionAndRemainder(int a, int b, out int division, out int remainder)
         {
             if (b == 0)
             {
                 throw new Exception("b can't be 0");
             }
-            result = a / b;
+            division = a / b;
             remainder = a % b;
         } //1
         public static void Swap(ref string a, ref string b)
         {
-            if (a == b)
-            {
-                throw new Exception("a cannot equal b");
-            }
             string tmp;
             tmp = a;
             a = b;
@@ -52,16 +48,12 @@ namespace HW_Methods
             double pointB = y2 - pointA * x2;
             string point1 = Convert.ToString(pointA);
             string point2 = Convert.ToString(pointB);
-            string result = ($" { point2 } {point1}");
+            string result = ($"Y={ point1 }X+{point2}");
             return result;
 
         }
 
-        public static int Add(int a, int b)
-        {
-            return a + b;
-        }
-
+        
 
     }
 

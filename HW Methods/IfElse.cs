@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace HW_Methods
 {
-    internal class IfElse
+    public class IfElse
     {
-        public static int CalculateTheNumbers(int a, int b)
+        public static int CountNumbers(int a, int b)
         {
             int result;
 
@@ -32,7 +32,7 @@ namespace HW_Methods
             string result;
             if (x > 0 && y > 0)
             {
-                result = "1 кординатная четверть";
+                result = "1 координатная четверть";
             }
             else if (x < 0 && y > 0)
             {
@@ -56,51 +56,28 @@ namespace HW_Methods
             }
             else
             {
-                result = "Точка является началом координаты";
+                result = "точка является началом координаты";
             }
 
             return (result);
         }
 
-        public static string PutInAscendingOrder(ref int a, ref int b, ref int c)
+        public static int [] PutInAscendingOrder(int a, int b, int c)
         {
-            string result;
+            int [] result = { a, b, c };
+            int tmp;
+            for (int i = 0; i < result.Length; i++)
+            {
+                for (int j = 0; j < result.Length - 1 - i; j++)
+                {
+                    if (result[j] > result[j + 1])
+                    {
+                        tmp = result[j];
+                        result[j] = result[j + 1];
+                        result[j + 1] = tmp;
+                    }
 
-            if (a < b && b < c)
-            {
-                result = ($"По возрастанию:{a} {b} {c}");
-            }
-            else if (b < a && a < c)
-            {
-                result = ($"По возрастанию:{b} {a} {c}");
-            }
-            else if (c < a && a < b)
-            {
-                result = ($"По возрастанию:{c} {a} {b}");
-            }
-            else if (b < c && c < a)
-            {
-                result = ($"По возрастанию:{b} {c} {a}");
-            }
-            else if (c < b && b < a)
-            {
-                result = ($"По возрастанию:{c} {b} {a}");
-            }
-            else if (a == b && c > a)
-            {
-                result = ($"По возрастанию:{a} {b} {c}");
-            }
-            else if (a == c && b > a)
-            {
-                result = ($"По возрастанию:{a} {c} {b}");
-            }
-            else if (b == c && a > c)
-            {
-                result = ($"По возрастанию:{b} {c} {a}");
-            }
-            else
-            {
-                result = ($"По возрастанию:{a} {b} {c}");
+                }
             }
             return result;
         }
