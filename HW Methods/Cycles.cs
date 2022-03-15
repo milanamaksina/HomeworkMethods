@@ -1,20 +1,31 @@
 ﻿namespace HW_Methods
 {
-    internal class Cycles
+    public class Cycles
     {
         public static int RaiseOneNumberToThePowerOfAnother(int a, int b) //1 
         {
             int result = 1;
-            for (int i = 0; i < b; i++)
+            int module = Math.Abs(b);
+            for (int i = 1; i <= module; i++)
             {
-                result *= a;
+                if (b >= 0)
+                {
+                    result = result * a;
+                }
+                else
+                {
+                    result = result * -a;
+                }
             }
-
             return result;
         }
 
         static public int[] GetDivisibleNumbers(int n)
-        {
+        {   
+            if (n < 1 || n > 1000)
+            {
+                throw new Exception("n cannot be less than 1 and more than 1000");
+            }
             int[] temp = new int[1000/n];
             int b = 0;
             for (int i = 1; i <= 1000; i++)
@@ -29,9 +40,13 @@
             return temp;
         } //2
 
-        public static int FindTheNumbersLessThanSquare(int a) // 3
-        {
+        public static int GetTheAmountOfNumbers(int a) // 3
+        {  
             int amount = 0;
+            if (a < 1)
+            {
+                throw new Exception("a cannot be less than 1");
+            }
             for (int i = 1; i < a; i++)
             {
                 int square = i * i;
@@ -50,6 +65,10 @@
         {
             int remainder;
             int result = 1;
+            if (a < 1)
+            {
+                throw new Exception(" a must be positive integer");
+            }
             for (int i = 1; i < a; i++)
             {
                 remainder = a % i;
@@ -85,7 +104,7 @@
 
         public static int PrintTheFibonacciNumber(int n)
         {
-            if (n < 0)
+            if (n <= 0)
             {
                 throw new Exception("Error");
             }
@@ -108,7 +127,7 @@
             int nod;
             a = Math.Abs(a);
             b = Math.Abs(b);
-            if (b == 0)
+            if (a == 0 || b == 0)
             {
                 throw new Exception("Ошибка");
             }

@@ -95,8 +95,8 @@ namespace HW_Methods
 
             if (discriminant > 0)
             {
-                result1[0] = (-b + rootD) / (2 * a);
-                result1[1] = (-b - rootD) / (2 * a);
+                result1[0] = (-b - rootD) / (2 * a);
+                result1[1] = (-b + rootD) / (2 * a);
                 return result1;
             }
             else if (discriminant < 0)
@@ -112,9 +112,9 @@ namespace HW_Methods
 
         }
 
-        public static string  GetDoubleFiguresInLetters (int a)
+        public static string GetDoubleFiguresInLetters(int a)
         {
-            if (a < 10 && a > 99)
+            if (a < 10 || a > 99)
             {
                 throw new Exception("Error");
             }
