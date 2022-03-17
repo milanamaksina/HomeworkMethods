@@ -146,12 +146,16 @@
             return nod;
         } //7
 
-        public static int FindNumber(int n)
+        public static double FindCubicNumber(double n, double delta = 0.001)
         {
-            int left = 0;
-            int right = n;
-            int tmp = 0;
-            while (left * left * left != n && right * right * right != n)
+            double left = 0;
+            double right = n;
+            double tmp = 0;
+            if (n <= 0)
+            {
+                throw new Exception("numb n cannot equal or be less than 0");
+            }
+            while (left * left * left + delta <= n || right * right * right - delta >= n)
             {
                 tmp = (left + right) / 2;
 
@@ -167,7 +171,7 @@
             return right;
         } //8
 
-        public static int FindTheNumberOfOddDigits(int a)
+        public static int FindTheAmountOfOddDigits(int a)
         {
             int tmp;
             int odd = 0;
@@ -184,7 +188,11 @@
         } //9
 
         public static int GetTheReverseNumber(int a)
-        {
+        {   
+            if (a < 0)
+            {
+                throw new Exception("numb a cannot be less than 0");
+            }
             int tmp = 0;
             while (a > 0)
             {
@@ -240,6 +248,10 @@
             bool isEqualNumber = false;
             string yes = "ДА";
             string no = "НЕТ";
+            if (numb1 == 0 || numb2 == 0)
+            {
+                throw new Exception("Numbers can't equal 0");
+            }
             while (numb1 > 1)
             {
                 tmp1 = numb1 % 10;

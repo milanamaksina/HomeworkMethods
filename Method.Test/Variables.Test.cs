@@ -53,7 +53,7 @@ namespace Method.Test
             Assert.AreEqual(expectedB, b);
         } // 3
 
-        [TestCase(-18, -2, 15, -0.94444444444444442d)]
+        [TestCase(-18, -2, 15, -0.94)]
         [TestCase(10, 5, 35, 3)]
         [TestCase(-2, 15, 5, 5)]
         [TestCase(-5,-5,0,-1)]

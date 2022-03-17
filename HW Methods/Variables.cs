@@ -31,7 +31,7 @@ namespace HW_Methods
                 throw new Exception("a and b cannot equal 0");
             }
             double result = (5 * a + b * b) / (b - a);
-            return result;
+            return Math.Round(result, 2);
         } //2
         public static double FindXLinearEquation(double a, double b, double c)
         {
@@ -40,7 +40,7 @@ namespace HW_Methods
                 throw new Exception("a cannot equal 0");
             }
             double x = (c - b) / a;
-            return x;
+            return Math.Round(x, 2);
         } //4
         public static string GetStraightLineEquation(double x1, double y1, double x2, double y2)
         {

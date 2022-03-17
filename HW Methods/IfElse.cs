@@ -106,7 +106,7 @@ namespace HW_Methods
             }
             else
             {
-                result2[0] = -b / (2 * b);
+                result2[0] = -b / (2 * a);
                 return result2;
             }
 

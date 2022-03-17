@@ -109,7 +109,55 @@ namespace Method.Test
             Assert.Throws<Exception>(() => Cycles.FindTheGreatestCommonDivisor(a, b));
         } //7
 
-        
+        [TestCase(8, 2)]
+        [TestCase(125, 5)]
+        [TestCase(28, 3)]
+        public void FindCubicNumberTest(double n, double expected)
+        {
+            double actual = Cycles.FindCubicNumber(n);
+            Assert.AreEqual(expected, actual, 0.5);
+        } //8
+
+        [TestCase(-20)]
+        [TestCase(0)]
+        public void FindCubicNumderTest_WhenNEquelorLessThanZero_ShouldThrowExeption(double n)
+        {
+            Assert.Throws<Exception>(() => Cycles.FindCubicNumber(n));
+        } //8
+
+        [TestCase(12345, 3)]
+        [TestCase(-1298777, 5)]
+        [TestCase(0000, 0)]
+        public void FindTheAmountOfOddDigitsTest(int a, int expected)
+        {
+            int actual = Cycles.FindTheAmountOfOddDigits(a);
+            Assert.AreEqual(expected, actual);
+        } // 9
+
+        [TestCase(12078, 87021)]
+        [TestCase(1001, 1001)]
+        [TestCase(00, 00)]
+        public void GetTheReverseNumberTest(int a, int expected)
+        {
+            int actual = Cycles.GetTheReverseNumber(a);
+            Assert.AreEqual(expected, actual);
+        } //10
+
+        [TestCase(100, 101, "ДА")]
+        [TestCase(-239291, 123, "ДА")]
+        [TestCase(97, 234, "НЕТ")]
+        [TestCase(-298, -404,"НЕТ")]
+        public void CheckNumbersForSameDegitsTest(int numb1, int numb2, string expected)
+        {
+            string actual = Cycles.CheckNumbersForSameDegits(numb1, numb2);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestCase(0,0)]
+        public void CheckNumbersForSameDegitsTest_WhenNumbersAreLessThanZero_ShouldThrowExeption(int numb1, int numb2)
+        {
+            Assert.Throws<Exception>(() => Cycles.CheckNumbersForSameDegits(numb1, numb2));
+        }
 
     }
 

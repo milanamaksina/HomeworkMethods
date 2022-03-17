@@ -1,6 +1,6 @@
 ﻿namespace HW_Methods
 {
-    internal class Arrays
+    public class Arrays
     {
         public static void WriteArray(int [] array)
         {
