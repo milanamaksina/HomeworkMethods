@@ -1,6 +1,6 @@
 ﻿namespace HW_Methods
 {
-    internal class TwoDimensionalArray
+    public class TwoDimensionalArray
     {
         public static int FindMinValue2D(int[,] array)
         {
@@ -80,7 +80,7 @@
             {
                 for (int j = 0; j < array.GetLength(1); j++)
                 {
-                    if (array[i, j] < max)
+                    if (array[i, j] > max)
                     {
                         max = array[i, j];
                     }
@@ -99,30 +99,6 @@
 
             }
             return result;
-        }
-        public static int[,] Generate2DArray(int a, int b, int min = -100, int max = 100)
-        {
-            int[,] newArray = new int[a, b];
-            Random random = new Random();
-            for (int i = 0; i < a; i++)
-            {
-                for (int j = 0; j < b; j++)
-                {
-                    newArray[i, j] = random.Next(min, max);
-                }
-            }
-            return newArray;
-        }
-        public static void Write2DArray(int[,] array)
-        {
-            for (int i = 0; i < array.GetLength(0); i++)
-            {
-                for (int j = 0; j < array.GetLength(1); j++)
-                {
-                    Console.Write(array[i, j] + " ");
-                }
-                Console.WriteLine();
-            }
         }
         public static int CountElementsHigherThanNeighbor(int[,] array)
         {
@@ -159,6 +135,30 @@
             }
             return result;
 
+        }
+        public static int[,] Generate2DArray(int a, int b, int min = -100, int max = 100)
+        {
+            int[,] newArray = new int[a, b];
+            Random random = new Random();
+            for (int i = 0; i < a; i++)
+            {
+                for (int j = 0; j < b; j++)
+                {
+                    newArray[i, j] = random.Next(min, max);
+                }
+            }
+            return newArray;
+        }
+        public static void Write2DArray(int[,] array)
+        {
+            for (int i = 0; i < array.GetLength(0); i++)
+            {
+                for (int j = 0; j < array.GetLength(1); j++)
+                {
+                    Console.Write(array[i, j] + " ");
+                }
+                Console.WriteLine();
+            }
         }
     }
 

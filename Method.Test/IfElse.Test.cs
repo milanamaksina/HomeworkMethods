@@ -47,13 +47,21 @@ namespace Method.Test
             Assert.AreEqual(expected, actual);
         } //3
 
-        [TestCase(4, -16, 10, new double[] { 0.775255, 3.22474 })]
+        [TestCase(4, -16, 10, new double[] { 0.78, 3.22 })]
+        [TestCase(1, 12, 36, new double[] { -6 })]
+        [TestCase(5,3,7,new double[] {0})]
         public void FindXQuadricEquationTest(double a, double b, double c, double[] expected)
         {
             double[] actual = IfElse.FindXQuadricEquation(a, b, c);
             Assert.AreEqual(expected, actual);
-     
-        } //4 ???
+
+        } //4 
+
+        [TestCase(0,12,32)]
+        public void FindXQuadricEquationTest_WhenAEqual0_ShouldThrowExeption(double a, double b, double c)
+        {
+            Assert.Throws<Exception>(() => IfElse.FindXQuadricEquation(a, b, c));
+        } //4
 
         [TestCase(11, "одиннадцать")]
         [TestCase(99, "девяносто девять")]

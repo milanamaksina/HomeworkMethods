@@ -42,12 +42,13 @@ namespace HW_Methods
             double x = (c - b) / a;
             return Math.Round(x, 2);
         } //4
+
         public static string GetStraightLineEquation(double x1, double y1, double x2, double y2)
         {
             double pointA = (y1 - y2) / (x1 - x2);
             double pointB = y2 - pointA * x2;
-            string point1 = Convert.ToString(pointA);
-            string point2 = Convert.ToString(pointB);
+            string point1 = Convert.ToString(Math.Round(pointA,2));
+            string point2 = Convert.ToString(Math.Round(pointB, 2));
             string result = ($"Y={ point1 }X+{point2}");
             return result;
 

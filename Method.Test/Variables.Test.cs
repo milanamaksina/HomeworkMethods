@@ -72,10 +72,12 @@ namespace Method.Test
         } //4
 
 
+        [TestCase(1.2, 5.6, -3.45, 8.2, "Y=-0,56X+6,27")]
+        [TestCase(4,9,-1,-3, "Y=2,4X+-0,6")]
         public void GetStraightLineEquationTest(double x1, double y1, double x2, double y2, string expected)
         {
             string actuale = Variables.GetStraightLineEquation(x1, y1, x2, y2);
             Assert.AreEqual(expected, actuale);
         }
-    }   //5 ?
+    }   //5 
 }

@@ -84,7 +84,7 @@ namespace HW_Methods
 
         public static double [] FindXQuadricEquation(double a, double b, double c)
         {
-            if (a == 0 && b == 0)
+            if (a == 0)
             {
                 throw new Exception("a and b cannot equal 0");
             }
@@ -95,8 +95,8 @@ namespace HW_Methods
 
             if (discriminant > 0)
             {
-                result1[0] = (-b - rootD) / (2 * a);
-                result1[1] = (-b + rootD) / (2 * a);
+                result1[0] = Math.Round((-b - rootD) / (2 * a),2);
+                result1[1] = Math.Round((-b + rootD) / (2 * a),2);
                 return result1;
             }
             else if (discriminant < 0)
@@ -106,7 +106,7 @@ namespace HW_Methods
             }
             else
             {
-                result2[0] = -b / (2 * a);
+                result2[0] =-b / (2 * a);
                 return result2;
             }
 
